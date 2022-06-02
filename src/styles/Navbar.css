@@ -1,0 +1,18 @@
+nav {
+  box-sizing: border-box;
+  width: 100vw;
+  display: flex;
+}
+
+.nav-list {
+  box-sizing: border-box;
+  margin-left: auto;
+  display: flex;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #424242;
+  margin: 1rem;
+}
