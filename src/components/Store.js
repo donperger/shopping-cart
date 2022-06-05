@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ItemCrads from './ItemCards';
+import '../styles/Store.css';
 
 const Store = () => {
   const [products, setProdutcs] = useState([]);
@@ -20,7 +21,6 @@ const Store = () => {
 
   return (
     <div className="store-comp">
-      <button onClick={onClick}>Click Me</button>
       <div className="products-cont">
         {products.map((product) => {
           return (
