@@ -8,6 +8,13 @@ const Store = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
+    const getCartInfo = () => {
+      const cartInfo = localStorage.getItem('shoppingCart');
+      setCart(JSON.parse(cartInfo));
+    };
+
+    getCartInfo();
+
     fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
       .then((json) => {
