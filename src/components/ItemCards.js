@@ -18,6 +18,7 @@ const ItemCrads = (props) => {
 
   const addToCart = () => {
     props.addItemToCart(props.title, props.price, Number(amountOfItem));
+    setAmountOfItem(1);
   };
 
   return (
