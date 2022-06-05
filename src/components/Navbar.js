@@ -4,7 +4,7 @@ import '../styles/Navbar.css';
 const Navbar = () => {
   return (
     <nav>
-      <div className="store-name">Store</div>
+      <div className="store-name">Spuer Random Super Store</div>
       <ul className="nav-list">
         <li>
           <Link to="/home">Home</Link>
