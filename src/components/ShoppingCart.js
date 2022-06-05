@@ -19,7 +19,7 @@ const ShoppingCart = (props) => {
     };
 
     const updateCartInLocalStorage = () => {
-      localStorage.setItem('shoppingCart', JSON.stringify(props.cart));
+      if (props.cart.length !== 0) localStorage.setItem('shoppingCart', JSON.stringify(props.cart));
     };
 
     updateCartInLocalStorage();
