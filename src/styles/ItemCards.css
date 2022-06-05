@@ -1,0 +1,10 @@
+.item-card {
+  box-sizing: border-box;
+  width: 200px;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.product-img {
+  width: 150px;
+}
