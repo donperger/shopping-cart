@@ -11,11 +11,18 @@ const ShoppingCart = (props) => {
 
   useEffect(() => {
     const countItems = () => {
+      let counter = 0;
       props.cart.forEach((item) => {
-        setNumOfItems(numOfItems + item.amount);
+        counter += item.amount;
       });
+      setNumOfItems(counter);
     };
 
+    const updateCartInLocalStorage = () => {
+      localStorage.setItem('shoppingCart', JSON.stringify(props.cart));
+    };
+
+    updateCartInLocalStorage();
     countItems();
   }, [props.cart]);
 
