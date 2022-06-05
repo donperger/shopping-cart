@@ -13,6 +13,8 @@ const ItemCrads = (props) => {
       <div className="title">{props.title}</div>
       <img className="product-img" src={props.image} alt="Product image" />
       <div className="price">{props.price} $</div>
+      <input type="number" name="numberOfPurchase" />
+      <button className="add-to-cart-btn">Add To Cart</button>
     </div>
   );
 };
