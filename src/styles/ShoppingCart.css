@@ -1,0 +1,13 @@
+.shopping-cart {
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  color: #fff;
+  background-color: #000;
+}
+
+.checkout-btn {
+  margin-left: 1rem;
+}

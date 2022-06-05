@@ -1,4 +1,5 @@
 import propTypes from 'prop-types';
+import '../styles/ShoppingCart.css';
 
 const ShoppingCart = (props) => {
   ShoppingCart.propTypes = {
