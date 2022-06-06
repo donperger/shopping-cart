@@ -12,6 +12,9 @@ const Navbar = () => {
         <li>
           <Link to="/store">Store</Link>
         </li>
+        <li>
+          <a href="https://github.com/donperger">@donperger</a>
+        </li>
       </ul>
     </nav>
   );
