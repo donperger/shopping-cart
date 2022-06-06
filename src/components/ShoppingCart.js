@@ -1,5 +1,6 @@
 import propTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/ShoppingCart.css';
 
 const ShoppingCart = (props) => {
@@ -39,6 +40,15 @@ const ShoppingCart = (props) => {
     setDisplayList(false);
   };
 
+  let navigate = useNavigate();
+  const proceedToHome = () => {
+    alert(
+      `Thank you for choosing Super Random Super Store, this is just a fake store because of this you won't be cahrged with any fees. Have a nice day!`
+    );
+    localStorage.setItem('shoppingCart', '[]');
+    navigate('.../home');
+  };
+
   return (
     <div className="shopping-cart">
       <div className="item-num">You have items {numOfItems} in your cart</div>
@@ -59,7 +69,9 @@ const ShoppingCart = (props) => {
             })}
             <li className="total-value">Total: {cartValue}$</li>
           </ul>
-          <button className="proceed-btn">Proceed To Payment Options</button>
+          <button className="proceed-btn" onClick={proceedToHome}>
+            Proceed To Payment Options
+          </button>
           <button className="go-back-btn" onClick={hideList}>
             Go Back To Shopping
           </button>
