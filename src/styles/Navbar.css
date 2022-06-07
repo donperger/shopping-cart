@@ -28,7 +28,9 @@ nav {
   list-style: none;
 }
 
-a {
+#home-link,
+#store-link,
+#github-link {
   text-decoration: none;
   color: var(--nav-font-clr);
   margin: 1rem;
@@ -36,7 +38,9 @@ a {
   transition: 500ms;
 }
 
-a:hover {
+#home-link:hover,
+#store-link:hover,
+#github-link:hover {
   color: var(--store-name-clr);
 }
 
