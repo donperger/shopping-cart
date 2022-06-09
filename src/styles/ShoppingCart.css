@@ -1,13 +1,29 @@
 .shopping-cart {
   box-sizing: border-box;
   position: sticky;
+  margin-bottom: 1rem;
+  padding: 1rem 0.5rem;
   top: 0;
-  width: 100vw;
   display: flex;
-  color: #fff;
-  background-color: #000;
+  align-items: center;
+  color: #424242;
+  background-color: #b6d96a;
+  font-size: 1.2rem;
 }
 
 .checkout-btn {
+  margin-left: 1rem;
+}
+
+.checkout-list {
+  list-style: none;
+}
+
+.total-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.go-back-btn {
   margin-left: 1rem;
 }

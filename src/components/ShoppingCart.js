@@ -2,6 +2,7 @@ import propTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/ShoppingCart.css';
+import Button from 'react-bootstrap/Button';
 
 const ShoppingCart = (props) => {
   ShoppingCart.propTypes = {
@@ -21,7 +22,7 @@ const ShoppingCart = (props) => {
         valueCounter += item.amount * item.price;
       });
       setNumOfItems(pieceCounter);
-      setCartValue(valueCounter);
+      setCartValue(Number.parseFloat(valueCounter).toFixed(2));
     };
 
     const updateCartInLocalStorage = () => {
@@ -51,15 +52,17 @@ const ShoppingCart = (props) => {
 
   return (
     <div className="shopping-cart">
-      <div className="item-num">You have items {numOfItems} in your cart</div>
       {!displayList && (
-        <button className="checkout-btn" onClick={showList}>
-          Checkout
-        </button>
+        <>
+          <div className="item-num">You have items {numOfItems} in your cart</div>
+          <Button variant="outline-dark checkout-btn" onClick={showList}>
+            Checkout
+          </Button>
+        </>
       )}
       {displayList && (
-        <div className="checkout-list">
-          <ul>
+        <div className="checkout-list-cont">
+          <ul className="checkout-list">
             {props.cart.map((item, index) => {
               return (
                 <li key={index}>
@@ -69,12 +72,13 @@ const ShoppingCart = (props) => {
             })}
             <li className="total-value">Total: {cartValue}$</li>
           </ul>
-          <button className="proceed-btn" onClick={proceedToHome}>
+
+          <Button variant="outline-success" className="proceed-btn" onClick={proceedToHome}>
             Proceed To Payment Options
-          </button>
-          <button className="go-back-btn" onClick={hideList}>
+          </Button>
+          <Button variant="outline-secondary" className="go-back-btn" onClick={hideList}>
             Go Back To Shopping
-          </button>
+          </Button>
         </div>
       )}
     </div>
