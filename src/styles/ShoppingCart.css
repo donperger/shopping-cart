@@ -1,7 +1,6 @@
 .shopping-cart {
   box-sizing: border-box;
   position: sticky;
-  margin-bottom: 1rem;
   padding: 1rem 0.5rem;
   top: 0;
   display: flex;
