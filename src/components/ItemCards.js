@@ -1,6 +1,8 @@
 import '../styles/ItemCards.css';
 import propTypes from 'prop-types';
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const ItemCrads = (props) => {
   ItemCrads.propTypes = {
@@ -26,10 +28,19 @@ const ItemCrads = (props) => {
       <div className="title">{props.title}</div>
       <img className="product-img" src={props.image} alt="Product image" />
       <div className="price">{props.price} $</div>
-      <input type="number" name="amountOfItem" value={amountOfItem} onChange={onInputChange} />
-      <button className="add-to-cart-btn" onClick={addToCart}>
-        Add To Cart
-      </button>
+      <div className="purchase-actions">
+        <Form>
+          <Form.Control
+            id="quantity-input"
+            type="number"
+            value={amountOfItem}
+            onChange={onInputChange}
+          />
+        </Form>
+        <Button variant="success" className="add-to-cart-btn" onClick={addToCart}>
+          Add To Cart
+        </Button>
+      </div>
     </div>
   );
 };
