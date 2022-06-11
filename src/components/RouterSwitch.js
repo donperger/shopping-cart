@@ -6,7 +6,7 @@ import Store from './Store';
 
 const RouterSwitch = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/shopping-cart">
       <Navbar />
 
       <Routes>
