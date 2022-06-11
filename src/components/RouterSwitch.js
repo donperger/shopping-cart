@@ -6,7 +6,7 @@ import Store from './Store';
 
 const RouterSwitch = () => {
   return (
-    <HashRouter>
+    <HashRouter basename="/shopping-cart">
       <Navbar />
 
       <Routes>
