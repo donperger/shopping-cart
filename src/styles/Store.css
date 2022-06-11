@@ -6,3 +6,10 @@
   flex-wrap: wrap;
   background-color: #707365;
 }
+
+.spinner-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}

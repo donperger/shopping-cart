@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import ItemCrads from './ItemCards';
 import '../styles/Store.css';
 import ShoppingCart from './ShoppingCart';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Store = () => {
   const [products, setProdutcs] = useState([]);
   const [cart, setCart] = useState([]);
+  const [isDataReady, setIsDataReady] = useState(false);
 
   useEffect(() => {
     const getCartInfo = () => {
@@ -19,6 +21,7 @@ const Store = () => {
       .then((res) => res.json())
       .then((json) => {
         setProdutcs(products.concat(json));
+        setIsDataReady(true);
         console.log('Data is ready');
       });
   }, []);
@@ -45,7 +48,12 @@ const Store = () => {
 
   return (
     <div className="store-comp">
-      <ShoppingCart cart={cart} />
+      {isDataReady && <ShoppingCart cart={cart} />}
+      {!isDataReady && (
+        <div className="spinner-cont">
+          <Spinner animation="border" variant="secondary" size="xl" />
+        </div>
+      )}
       <div className="products-cont">
         {products.map((product) => {
           return (
