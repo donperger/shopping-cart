@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './Home';
 import Navbar from './Navbar';
@@ -6,7 +6,7 @@ import Store from './Store';
 
 const RouterSwitch = () => {
   return (
-    <BrowserRouter basename="https://donperger.github.io/shopping-cart">
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Navbar />
 
       <Routes>
@@ -14,7 +14,7 @@ const RouterSwitch = () => {
         <Route path="/store" element={<Store />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
