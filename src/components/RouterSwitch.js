@@ -6,7 +6,7 @@ import Store from './Store';
 
 const RouterSwitch = () => {
   return (
-    <BrowserRouter basename="/shopping-cart">
+    <BrowserRouter basename="https://donperger.github.io/shopping-cart">
       <Navbar />
 
       <Routes>
