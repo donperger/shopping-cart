@@ -22,7 +22,6 @@ const Store = () => {
       .then((json) => {
         setProdutcs(products.concat(json));
         setIsDataReady(true);
-        console.log('Data is ready');
       });
   }, []);
 
