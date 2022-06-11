@@ -11,7 +11,11 @@ const Store = () => {
 
   useEffect(() => {
     const getCartInfo = () => {
-      const cartInfo = localStorage.getItem('shoppingCart');
+      let cartInfo = localStorage.getItem('shoppingCart');
+      if (!cartInfo) {
+        localStorage.setItem('shoppingCart', '[]');
+        cartInfo = '[]';
+      }
       setCart(JSON.parse(cartInfo));
     };
 
